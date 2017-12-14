@@ -10,8 +10,17 @@ namespace Halloween
     {
         static void Main(string[] args)
         {
-            https://www.youtube.com/watch?v=6oad0kjMZQI
-            http://programmingisfun.com/learn/c-sharp-adventure-game/c_sharp_04_input/
+            Console.WriteLine("What is your name?");
+            string playerName = Console.ReadLine();
+
+            Console.WriteLine("Hello " + playerName);
+
+
+
+/*
+https://www.youtube.com/watch?v=6oad0kjMZQI
+http://programmingisfun.com/learn/c-sharp-adventure-game/c_sharp_04_input/
+*/
         }
     }
 }
