@@ -24,6 +24,8 @@ namespace Halloween
         static int batHealth = 50;
         static int batAttack = 20;
 
+        static int ghostHealth = 100;
+
         static void Main(string[] args)
         {
             Act1();
