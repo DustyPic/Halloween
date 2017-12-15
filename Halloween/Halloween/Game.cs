@@ -17,8 +17,8 @@ http://programmingisfun.com/learn/c-sharp-adventure-game/c_sharp_04_input/
         static string playerName;
         static string playerChoice;
 
-        static int monsterHealth = 75;
-        static int monsterAttack = 10;
+        static int oldmanHealth = 75;
+        static int oldmanAttack = 10;
 
         static void Main(string[] args)
         {
@@ -28,15 +28,18 @@ http://programmingisfun.com/learn/c-sharp-adventure-game/c_sharp_04_input/
 
         private static void Welcome()
         {
-            Console.WriteLine("Halloween");
+            Console.WriteLine("Reede 13 mäng");
+            Console.WriteLine("Mängu mõte on öö üle elada");
 
-            Console.WriteLine("What is your name?");
+            Console.WriteLine("Mis on sinu nimi?");
             string playerName = Console.ReadLine();
-            Console.WriteLine("Hello " + playerName);
+            Console.WriteLine("Tere " + playerName);
 
-            Console.ForegroundColor = ConsoleColor.Red;
-            Console.WriteLine("Tere tulemast");
             Console.ForegroundColor = ConsoleColor.Gray;
+            Console.WriteLine("Sa oled üksi keset metsa, sa ei mäleta kuidas sa sinna sattusid... kuuled järsku kedagi lähenemas!");
+            Console.WriteLine("Sind ründab hulluks läinud vanamees");
+            Console.WriteLine("(Jätkamiseks vajuta ENTER)");
+            Console.ForegroundColor = ConsoleColor.Red;
             Console.ReadLine();
         }
 
@@ -45,46 +48,46 @@ http://programmingisfun.com/learn/c-sharp-adventure-game/c_sharp_04_input/
 
             do
             {
-                Console.WriteLine("Sul on " + playerHealth + "elusi");
-                Console.WriteLine("Koletisel on " + monsterHealth + "elusi");
-                Console.WriteLine("Kas sa (A) ründad või (B) kaitsed");
+                Console.WriteLine("Sul on " + playerHealth + " elupunkti");
+                Console.WriteLine("Vanamehel on " + oldmanHealth + " elupunkti");
+                Console.WriteLine("Kas sa (a) ründad või (b) kaitsed");
                 playerChoice = Console.ReadLine(); Console.WriteLine();
 
                 if (playerChoice == "a")
                 {
                     Random rand = new Random();
                     int attacking = (rand.Next(1, 5) * playerAttack);
-                    monsterHealth = monsterHealth - attacking;
+                    oldmanHealth = oldmanHealth - attacking;
 
-                    Console.WriteLine("Loom ründab");
+                    Console.WriteLine("Vanamees ründab");
                     Random rand1 = new Random();
-                    int monsterdmg = (rand.Next(1, 5) * monsterAttack);
+                    int monsterdmg = (rand.Next(1, 5) * oldmanAttack);
                     playerHealth = playerHealth - monsterdmg;
 
-                    Console.WriteLine("Sa tegid koletisele {0} kahju", attacking);
+                    Console.WriteLine("Sa tegid Vanamehele {0} kahju", attacking);
 
-                    Console.WriteLine("Sa said kahju {0} koletiselt", monsterdmg);
+                    Console.WriteLine("Sa said {0} kahju Vanamehelt", monsterdmg);
 
                 }
                 else if (playerChoice == "b")
                 {
-                    Console.WriteLine("Loom ründab");
+                    Console.WriteLine("Vanamees ründab");
                     Random rand = new Random();
-                    int monsterdmg = (rand.Next(1, 5) * monsterAttack);
+                    int monsterdmg = (rand.Next(1, 5) * oldmanAttack);
                     playerHealth = playerHealth - monsterdmg / 2;
 
-                    Console.WriteLine("Sa said kahju {0} koletiselt", monsterdmg / 2);
+                    Console.WriteLine("Sa said {0} kahju Vanamehelt", monsterdmg / 2);
                 }
                 else
                 {
                     Console.WriteLine("Vale valik");
                 }
 
-            } while (playerHealth > 0 && monsterHealth > 0);
+            } while (playerHealth > 0 && oldmanHealth > 0);
 
-            if (monsterHealth <= 0)
+            if (oldmanHealth <= 0)
             {
-                Console.WriteLine("Sa tapsid koletise");
+                Console.WriteLine("Sa alistasid Vanamehe");
 
             }
 
