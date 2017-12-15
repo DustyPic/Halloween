@@ -131,7 +131,7 @@ namespace Halloween
             {
                 Console.WriteLine("Sa alistasid Joodiku");
                 Console.ResetColor();
-
+                Act1();
             }
 
             if (playerHealth <= 0)
@@ -234,7 +234,7 @@ namespace Halloween
             {
                 Console.WriteLine("Sa alistasid Joodiku");
                 Console.ResetColor();
-
+                Act1();
             }
 
             if (playerHealth <= 0)
@@ -337,7 +337,7 @@ namespace Halloween
             {
                 Console.WriteLine("Sa alistasid Joodiku");
                 Console.ResetColor();
-
+                Act1();
             }
 
             if (playerHealth <= 0)
@@ -440,7 +440,7 @@ namespace Halloween
             {
                 Console.WriteLine("Sa alistasid Joodiku");
                 Console.ResetColor();
-
+                Act1();
             }
 
             if (playerHealth <= 0)
@@ -546,7 +546,7 @@ namespace Halloween
             {
                 Console.WriteLine("Sa alistasid Joodiku");
                 Console.ResetColor();
-
+                Act1();
             }
 
             if (playerHealth <= 0)
