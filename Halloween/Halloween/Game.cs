@@ -8,11 +8,6 @@ namespace Halloween
 {
     class Game
     {
-        /*
-       https://www.youtube.com/watch?v=6oad0kjMZQI
-       http://programmingisfun.com/learn/c-sharp-adventure-game/c_sharp_04_input/
-       https://www.youtube.com/watch?v=3foH7ZfC-Hk
-       */
         static int playerHealth = 100;
         static int playerAttack = 20;
         static string playerName;
@@ -461,10 +456,10 @@ namespace Halloween
         {
             Console.WriteLine("Reede 13 mäng");
             Console.WriteLine("Mängu mõte: Hommikuni elus püsida!");
-            Console.WriteLine("Juhul kui mäng lõpeb, hakkab mäng algusest peale");
 
             Console.WriteLine("Mis on sinu nimi?");
             string playerName = Console.ReadLine();
+            Console.WriteLine();
             Console.WriteLine("Tere " + playerName);
 
             Console.ForegroundColor = ConsoleColor.Gray;
@@ -476,7 +471,9 @@ namespace Halloween
         public static void Ask1()
         {
             Console.WriteLine("Kas sa lähed (a) maja poole või (b) vastupidises suunas?");
-            playerChoice = Console.ReadLine(); Console.WriteLine();
+            playerChoice = Console.ReadLine().ToLower();
+            Console.WriteLine();
+            
 
             if (playerChoice == "a")
             {
@@ -504,7 +501,8 @@ namespace Halloween
                 Console.WriteLine("Sul on " + playerHealth + " elupunkti");
                 Console.WriteLine("Joodikul on " + drunkHealth + " elupunkti");
                 Console.WriteLine("Kas sa lööd (a) kiviga või (b) rusikatega");
-                playerChoice = Console.ReadLine(); Console.WriteLine();
+                playerChoice = Console.ReadLine().ToLower();
+                Console.WriteLine();
 
                 if (playerChoice == "a")
                 {
@@ -548,14 +546,12 @@ namespace Halloween
             {
                 Console.WriteLine("Sa alistasid Joodiku");
                 Console.ResetColor();
-                Act1();
             }
 
             if (playerHealth <= 0)
             {
                 Console.WriteLine("Sa hukkusid");
                 Console.ResetColor();
-                Act1();
 
             }  
 
